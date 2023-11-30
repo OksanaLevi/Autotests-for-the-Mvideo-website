@@ -1,0 +1,4 @@
+git init/.idea
+/build
+/.gradle
+*.class
