@@ -1,4 +1,4 @@
-package herokuapp.booker.booking;
+package herokuapp.booker.tests.booking;
 
 import org.junit.jupiter.api.Test;
 

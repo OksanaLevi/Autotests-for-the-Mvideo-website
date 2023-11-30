@@ -1,22 +1,20 @@
-package herokuapp.booker.auth;
+package herokuapp.booker.tests.auth;
 
+import herokuapp.booker.models.LoginBodyModel;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.is;
 
 public class AuthTest {
 
     @Test
     void AuthAndCreateTokenTest () {
+        LoginBodyModel authData = new LoginBodyModel();
+        authData.setUsername("admin");
+        authData.setPassword("password123");
 
-        String authData = "{\n" +
-                "    \"username\" : \"admin\",\n" +
-                "    \"password\" : \"password123\"\n" +
-                "}";
-
-        String token = given()
+        LoginBodyModel token = given()
                 .log().uri()
                 .log().method()
                 .contentType(JSON)
@@ -27,7 +25,8 @@ public class AuthTest {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .extract().path("token");
+                .extract().as(LoginBodyModel.class);
+
         System.out.println(token);
     }
 }
