@@ -14,7 +14,7 @@ public class DeleteBookingTests {
                 .log().uri()
                 .log().method()
                 .contentType(JSON)
-                .header("Cookie","token=70c7284070f5bf3")
+                .header("Cookie", "token=70c7284070f5bf3")
                 .when()
                 .delete("https://restful-booker.herokuapp.com/booking/13")
                 .then()

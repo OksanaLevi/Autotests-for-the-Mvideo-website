@@ -10,7 +10,7 @@ import static io.restassured.http.ContentType.JSON;
 public class AuthTest {
 
     @Test
-    void AuthAndCreateTokenTest () {
+    void AuthAndCreateTokenTest() {
         LoginBodyModel authData = new LoginBodyModel();
         authData.setUsername("admin");
         authData.setPassword("password123");
