@@ -23,5 +23,4 @@ public class AuthSpec {
             .log(BODY)
             .expectStatusCode(200)
             .build();
-
 }

@@ -55,7 +55,7 @@ public class UpdateBookingTests {
                 .header("Cookie", "token=cbed4c7ee389b9d")
                 .body(bookingData)
                 .when()
-                .patch("https://restful-booker.herokuapp.com/booking/771")
+                .patch("https://restful-booker.herokuapp.com/booking/2338")
                 .then()
                 .log().status()
                 .log().body()
