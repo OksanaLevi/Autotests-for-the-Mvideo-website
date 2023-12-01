@@ -4,8 +4,9 @@ import herokuapp.booker.models.LoginBodyModel;
 import herokuapp.booker.models.LoginResponseModel;
 import org.junit.jupiter.api.Test;
 
+import static herokuapp.booker.specs.AuthSpec.authRequestSpec;
+import static herokuapp.booker.specs.AuthSpec.authResponseSpec;
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
 
 public class AuthTest {
 
@@ -17,17 +18,30 @@ public class AuthTest {
 
         LoginResponseModel response = new LoginResponseModel();
 
-        LoginResponseModel token = given()
-                .log().uri()
-                .log().method()
-                .contentType(JSON)
+        LoginResponseModel token = given(authRequestSpec)
                 .body(authData)
                 .when()
-                .post("https://restful-booker.herokuapp.com/auth")
+                .post("/auth")
                 .then()
-                .log().status()
-                .log().body()
-                .statusCode(200)
+                .spec(authResponseSpec)
+                .extract().as(LoginResponseModel.class);
+
+        System.out.println((token));
+    }
+
+    @Test
+    void MissingPasswordAuthTest() {
+        LoginBodyModel authData = new LoginBodyModel();
+        authData.setUsername("admin");
+
+        LoginResponseModel response = new LoginResponseModel();
+
+        LoginResponseModel token = given(authRequestSpec)
+                .body(authData)
+                .when()
+                .post("/auth")
+                .then()
+                .spec(authResponseSpec)
                 .extract().as(LoginResponseModel.class);
 
         System.out.println((token));
