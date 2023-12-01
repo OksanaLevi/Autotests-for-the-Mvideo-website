@@ -26,15 +26,12 @@ public class AuthHelper {
 //        return;
 //    }
 
-    public static String getAuthToken() {
-        LoginBodyModel authData = new LoginBodyModel();
-        authData.setUsername("admin");
-        authData.setPassword("password123");
+    public static String getAuthToken(LoginBodyModel value) {
 
         String token = given(authRequestSpec)
-                .body(authData)
+                .body(value)
                 .when()
-                .post("https://restful-booker.herokuapp.co/auth")
+                .post("/auth")
                 .then()
                 .spec(authResponseSpec)
                 .extract().as(LoginResponseModel.class)

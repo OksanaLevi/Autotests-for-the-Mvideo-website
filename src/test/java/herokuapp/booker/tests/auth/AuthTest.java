@@ -4,31 +4,26 @@ import herokuapp.booker.helpers.AuthHelper;
 import herokuapp.booker.models.LoginBodyModel;
 import herokuapp.booker.models.LoginResponseModel;
 import org.junit.jupiter.api.Test;
-
-import static herokuapp.booker.specs.AuthSpec.authRequestSpec;
-import static herokuapp.booker.specs.AuthSpec.authResponseSpec;
-import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AuthTest {
 
     @Test
     public void authAndCreateTokenTest() {
-        AuthHelper.getAuthToken().isEmpty();
+        LoginBodyModel authData = new LoginBodyModel();
+        authData.setUsername("admin");
+        authData.setPassword("password123");
+
+        AuthHelper.getAuthToken(authData).isEmpty();
     }
 
     @Test
     void missingPasswordAuthTest() {
         LoginBodyModel authData = new LoginBodyModel();
-        authData.setUsername("admin");
+        LoginResponseModel response = new LoginResponseModel();
 
-        LoginResponseModel response = given(authRequestSpec)
-                .body(authData)
-                .when()
-                .post("/auth")
-                .then()
-                .spec(authResponseSpec)
-                .extract().as(LoginResponseModel.class);
+        authData.setUsername("admin");
+        AuthHelper.getAuthToken(authData);
 
         assertEquals("Bad credentials", response.getReason());
     }
