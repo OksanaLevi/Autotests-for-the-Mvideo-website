@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class UpdateBookingTests {
 
     @Test
-    void UpdateBookingTest() {
+    void updateBookingTest() {
 
         BookingDatesModel date = new BookingDatesModel();
         date.setCheckin("2023-11-06");
@@ -43,7 +43,7 @@ public class UpdateBookingTests {
     }
 
     @Test
-    void PartialUpdateBookingTest() {
+    void partialUpdateBookingTest() {
         BookingBodyModel bookingData = new BookingBodyModel();
         bookingData.setFirstname("Oksana");
         bookingData.setLastname("Bobrikova");

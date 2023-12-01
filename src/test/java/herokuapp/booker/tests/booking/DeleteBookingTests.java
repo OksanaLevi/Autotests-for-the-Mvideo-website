@@ -8,7 +8,7 @@ import static io.restassured.http.ContentType.JSON;
 public class DeleteBookingTests {
 
     @Test
-    void DeleteBookingTest() {
+    void deleteBookingTest() {
 
         given()
                 .log().uri()

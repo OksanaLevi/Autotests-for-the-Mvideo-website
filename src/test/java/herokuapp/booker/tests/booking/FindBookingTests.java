@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FindBookingTests {
 
     @Test
-    void GetBookingIdsTest() {
+    void getBookingIdsTest() {
         given()
                 .log().uri()
                 .log().method()
@@ -23,7 +23,7 @@ public class FindBookingTests {
     }
 
     @Test
-    void GetBookingTest() {
+    void getBookingTest() {
         BookingDatesModel date = new BookingDatesModel();
         date.setCheckin("2018-01-01");
 

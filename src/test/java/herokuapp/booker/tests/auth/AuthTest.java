@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class AuthTest {
 
     @Test
-    void AuthAndCreateTokenTest() {
+    void authAndCreateTokenTest() {
         LoginBodyModel authData = new LoginBodyModel();
         authData.setUsername("admin");
         authData.setPassword("password123");
@@ -30,7 +30,7 @@ public class AuthTest {
     }
 
     @Test
-    void MissingPasswordAuthTest() {
+    void missingPasswordAuthTest() {
         LoginBodyModel authData = new LoginBodyModel();
         authData.setUsername("admin");
 
