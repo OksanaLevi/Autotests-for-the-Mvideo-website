@@ -2,11 +2,11 @@ package herokuapp.booker.tests.booking;
 
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
-import herokuapp.booker.models.LoginResponseModel;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UpdateBookingTests {
 
@@ -25,7 +25,7 @@ public class UpdateBookingTests {
         bookingData.setBookingdates(date);
         bookingData.setAdditionalneeds("Breakfast");
 
-        LoginResponseModel token = new LoginResponseModel();
+//        LoginResponseModel token = new LoginResponseModel();
 
 
         given()
@@ -44,5 +44,24 @@ public class UpdateBookingTests {
 
     @Test
     void PartialUpdateBookingTest() {
+        BookingBodyModel bookingData = new BookingBodyModel();
+        bookingData.setFirstname("Oksana");
+        bookingData.setLastname("Bobrikova");
+
+        given()
+                .log().uri()
+                .log().method()
+                .contentType(JSON)
+                .cookie("token=0074bc88afc45e1")
+                .body(bookingData)
+                .when()
+                .patch("https://restful-booker.herokuapp.com/booking/771")
+                .then()
+                .log().status()
+                .log().body()
+                .statusCode(200);
+
+        assertEquals("Oksana", bookingData.getFirstname());
+        assertEquals("Bobrikova", bookingData.getLastname());
     }
 }
