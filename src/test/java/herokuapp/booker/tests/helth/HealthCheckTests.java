@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class HealthCheckTests {
     @Test
-    void GetHealthCheckTest() {
+    void getHealthCheckTest() {
         given()
                 .log().uri()
                 .log().method()

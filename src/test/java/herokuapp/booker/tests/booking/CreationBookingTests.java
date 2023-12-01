@@ -10,7 +10,7 @@ import static io.restassured.http.ContentType.JSON;
 public class CreationBookingTests {
 
     @Test
-    void CreateBookingTest() {
+    void createBookingTest() {
 
         BookingDatesModel date = new BookingDatesModel();
         date.setCheckin("2023-11-06");
