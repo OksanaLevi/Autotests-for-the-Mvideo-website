@@ -26,7 +26,7 @@ public class AuthTest {
                 .spec(authResponseSpec)
                 .extract().as(LoginResponseModel.class);
 
-        System.out.println((token));
+//        System.out.println((token));
     }
 
     @Test
@@ -44,6 +44,6 @@ public class AuthTest {
                 .spec(authResponseSpec)
                 .extract().as(LoginResponseModel.class);
 
-        System.out.println((token));
+//        System.out.println((token));
     }
 }
