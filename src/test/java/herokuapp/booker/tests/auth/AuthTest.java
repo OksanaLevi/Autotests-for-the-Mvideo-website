@@ -1,6 +1,7 @@
 package herokuapp.booker.tests.auth;
 
 import herokuapp.booker.models.LoginBodyModel;
+import herokuapp.booker.models.LoginResponseModel;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -14,7 +15,9 @@ public class AuthTest {
         authData.setUsername("admin");
         authData.setPassword("password123");
 
-        LoginBodyModel token = given()
+        LoginResponseModel response = new LoginResponseModel();
+
+        LoginResponseModel token = given()
                 .log().uri()
                 .log().method()
                 .contentType(JSON)
@@ -25,8 +28,8 @@ public class AuthTest {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .extract().as(LoginBodyModel.class);
+                .extract().as(LoginResponseModel.class);
 
-        System.out.println(token);
+        System.out.println((token));
     }
 }
