@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class СreatedReservationModel {
     int bookingid;
-    BookingBodyMмodel booking;
+    BookingBodyModel booking;
 }
