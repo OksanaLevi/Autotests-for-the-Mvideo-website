@@ -1,9 +1,10 @@
 package herokuapp.booker.tests.booking;
 
 import herokuapp.booker.helpers.CreateBookingHelper;
+import herokuapp.booker.helpers.utils.RandomTestData;
+import herokuapp.booker.models.ArrayBookingModel;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
-import herokuapp.booker.models.СreatedReservationModel;
 import io.restassured.response.ExtractableResponse;
 import org.junit.jupiter.api.Test;
 
@@ -13,21 +14,22 @@ public class CreationBookingTests {
 
     @Test
     void createBookingTest() {
-
+        RandomTestData randomTestData = new RandomTestData();
         BookingDatesModel date = new BookingDatesModel();
-        date.setCheckin("2023-11-10");
-        date.setCheckout("2023-11-15");
-
         BookingBodyModel bookingData = new BookingBodyModel();
-        bookingData.setFirstname("Olga");
-        bookingData.setLastname("Bobrova");
-        bookingData.setTotalprice(128);
-        bookingData.setDepositpaid(true);
-        bookingData.setBookingdates(date);
-        bookingData.setAdditionalneeds("Breakfast");
 
-        ExtractableResponse response = CreateBookingHelper.getBookingParams(bookingData);
-        int bookingDetails = response.as(СreatedReservationModel.class).getBookingid();
+        date.setCheckin(randomTestData.checkinDate);
+        date.setCheckout(randomTestData.checkoutDate);
+
+        bookingData.setFirstname(randomTestData.firstname);
+        bookingData.setLastname(randomTestData.lastname);
+        bookingData.setTotalprice(randomTestData.price);
+        bookingData.setDepositpaid(randomTestData.depositPaid);
+        bookingData.setBookingdates(date);
+        bookingData.setAdditionalneeds(randomTestData.additionalNeeds);
+
+        ExtractableResponse response = CreateBookingHelper.addBooking(bookingData);
+        int bookingDetails = response.as(ArrayBookingModel.class).getBookingid();
         String bookingId = String.valueOf(bookingDetails);
 
         assertFalse(bookingId.isEmpty());

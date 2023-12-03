@@ -5,6 +5,7 @@ import herokuapp.booker.models.LoginBodyModel;
 import herokuapp.booker.models.LoginResponseModel;
 import io.restassured.response.ExtractableResponse;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 

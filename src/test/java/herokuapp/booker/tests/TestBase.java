@@ -34,7 +34,7 @@ public class TestBase {
         bookingData.setAdditionalneeds("Breakfast");
 
         RestAssured.baseURI = "https://restful-booker.herokuapp.com";
-        ExtractableResponse response = CreateBookingHelper.getBookingParams(bookingData);
-        int bookingId = response.as(СreatedReservationModel.class).getBookingid();
+        ExtractableResponse response = CreateBookingHelper.addBooking(bookingData);
+        int bookingId = response.as(ArrayBookingModel.class).getBookingid();
     }
 }

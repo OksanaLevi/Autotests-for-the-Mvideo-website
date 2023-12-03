@@ -5,11 +5,11 @@ import io.restassured.response.ExtractableResponse;
 import static herokuapp.booker.specs.BookingSpec.bookingResponseSpec;
 import static io.restassured.RestAssured.given;
 
-public class FindBookingsHelper {
-    public static ExtractableResponse getArrayBookings() {
+public class ChangeBookingHelper {
+    public static ExtractableResponse changeBooking(int id) {
         ExtractableResponse response = given()
                 .when()
-                .get("/booking")
+                .get("/booking" + id)
                 .then()
                 .spec(bookingResponseSpec)
                 .extract();

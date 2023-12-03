@@ -1,15 +1,17 @@
 package herokuapp.booker.tests.booking;
 
+import herokuapp.booker.helpers.ChangeBookingHelper;
+import herokuapp.booker.helpers.CreateBookingHelper;
 import herokuapp.booker.helpers.FindBookingsHelper;
+import herokuapp.booker.helpers.utils.RandomTestData;
+import herokuapp.booker.models.ArrayBookingModel;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
-import herokuapp.booker.models.СreatedReservationModel;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -17,37 +19,37 @@ public class FindBookingTests {
 
     @Test
     void getBookingIdsTest() {
-        ExtractableResponse response = FindBookingsHelper.getBookings();
-        int id = response.as(СreatedReservationModel.class).getBookingid();
+        ExtractableResponse response = FindBookingsHelper.getArrayBookings();
+        ArrayBookingModel[] ids = response.as(ArrayBookingModel[].class);
+        int id = ids[0].getBookingid();
         String bookingId = String.valueOf(id);
 
         assertFalse(bookingId.isEmpty());
-
-
     }
 
     @Test
     void getBookingTest() {
+        RandomTestData randomTestData = new RandomTestData();
         BookingDatesModel date = new BookingDatesModel();
-        date.setCheckin("2018-01-01");
-
         BookingBodyModel bookingData = new BookingBodyModel();
-        bookingData.setFirstname("Josh");
+
+        date.setCheckin(randomTestData.checkinDate);
+        date.setCheckout(randomTestData.checkoutDate);
+
+        bookingData.setFirstname(randomTestData.firstname);
+        bookingData.setLastname(randomTestData.lastname);
+        bookingData.setTotalprice(randomTestData.price);
+        bookingData.setDepositpaid(randomTestData.depositPaid);
         bookingData.setBookingdates(date);
+        bookingData.setAdditionalneeds(randomTestData.additionalNeeds);
 
-        given()
-                .log().uri()
-                .log().method()
-                .when()
-                .get("https://restful-booker.herokuapp.com/booking/288")
-                .then()
-                .log().status()
-                .log().body()
-                .statusCode(200)
-                .extract().as(BookingBodyModel.class);
+        ExtractableResponse response = CreateBookingHelper.addBooking(bookingData);
+        int bookingDetails = response.as(ArrayBookingModel.class).getBookingid();
 
-        assertEquals("Josh", bookingData.getFirstname());
-        assertEquals("2018-01-01", date.getCheckin());
+        ChangeBookingHelper.changeBooking(bookingDetails);
+
+        assertEquals(randomTestData.firstname, bookingData.getFirstname());
+        assertEquals(randomTestData.checkinDate, date.getCheckin());
     }
 
     @BeforeEach
