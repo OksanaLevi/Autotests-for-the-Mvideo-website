@@ -1,6 +1,5 @@
 package herokuapp.booker.tests.booking;
 
-import herokuapp.booker.helpers.ChangeBookingHelper;
 import herokuapp.booker.helpers.CreateBookingHelper;
 import herokuapp.booker.helpers.FindBookingsHelper;
 import herokuapp.booker.helpers.utils.RandomTestData;
@@ -46,7 +45,7 @@ public class FindBookingTests {
         ExtractableResponse response = CreateBookingHelper.addBooking(bookingData);
         int bookingDetails = response.as(ArrayBookingModel.class).getBookingid();
 
-        ChangeBookingHelper.changeBooking(bookingDetails);
+        FindBookingsHelper.findBooking(bookingDetails);
 
         assertEquals(randomTestData.firstname, bookingData.getFirstname());
         assertEquals(randomTestData.checkinDate, date.getCheckin());

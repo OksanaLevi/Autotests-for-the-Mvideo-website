@@ -16,4 +16,15 @@ public class FindBookingsHelper {
 
         return response;
     }
+
+    public static ExtractableResponse findBooking(int id) {
+        ExtractableResponse response = given()
+                .when()
+                .get("/booking/" + id)
+                .then()
+                .spec(bookingResponseSpec)
+                .extract();
+
+        return response;
+    }
 }
