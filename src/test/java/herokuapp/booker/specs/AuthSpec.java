@@ -15,8 +15,8 @@ public class AuthSpec {
             .filter(withCustomTemplates())
             .log().uri()
             .log().method()
-            .contentType(JSON)
-            .baseUri("https://restful-booker.herokuapp.com");
+            .contentType(JSON);
+//            .baseUri("https://restful-booker.herokuapp.com");
 
     public static ResponseSpecification authResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)

@@ -8,6 +8,7 @@ public class BookingBodyModel {
     BookingDatesModel bookingdates;
     int totalprice;
     boolean depositpaid;
+
 }
 
 

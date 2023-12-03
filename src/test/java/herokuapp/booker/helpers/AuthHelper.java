@@ -14,7 +14,7 @@ public class AuthHelper {
         ExtractableResponse response = given(authRequestSpec)
                 .body(value)
                 .when()
-                .post("/auth")
+                .post("https://restful-booker.herokuapp.com/auth")
                 .then()
                 .spec(authResponseSpec)
                 .extract();
