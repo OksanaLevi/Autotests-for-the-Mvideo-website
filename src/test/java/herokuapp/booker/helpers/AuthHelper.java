@@ -1,7 +1,7 @@
 package herokuapp.booker.helpers;
 
 import herokuapp.booker.models.LoginBodyModel;
-import herokuapp.booker.models.LoginResponseModel;
+import io.restassured.response.ExtractableResponse;
 
 import static herokuapp.booker.specs.AuthSpec.authRequestSpec;
 import static herokuapp.booker.specs.AuthSpec.authResponseSpec;
@@ -9,34 +9,16 @@ import static io.restassured.RestAssured.given;
 
 public class AuthHelper {
 
-//    public void getAuthToken() {
-//        LoginBodyModel authData = new LoginBodyModel();
-//        authData.setUsername("admin");
-//        authData.setPassword("password123");
-//
-//        LoginResponseModel token = given(authRequestSpec)
-//                .body(authData)
-//                .when()
-//                .post("https://restful-booker.herokuapp.co/auth")
-//                .then()
-//                .spec(authResponseSpec)
-//                .spec(authResponseSpec)
-//                .extract().as(LoginResponseModel.class);
-//
-//        return;
-//    }
+    public static ExtractableResponse getAuthToken(LoginBodyModel value) {
 
-    public static String getAuthToken(LoginBodyModel value) {
-
-        String token = given(authRequestSpec)
+        ExtractableResponse response = given(authRequestSpec)
                 .body(value)
                 .when()
                 .post("/auth")
                 .then()
                 .spec(authResponseSpec)
-                .extract().as(LoginResponseModel.class)
-                .getToken();
+                .extract();
 
-        return token;
+        return response;
     }
 }
