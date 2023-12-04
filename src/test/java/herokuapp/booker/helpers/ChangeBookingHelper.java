@@ -2,8 +2,7 @@ package herokuapp.booker.helpers;
 
 import herokuapp.booker.models.BookingBodyModel;
 
-import static herokuapp.booker.specs.BookingSpec.bookingDeleteResponseSpec;
-import static herokuapp.booker.specs.BookingSpec.bookingResponseSpec;
+import static herokuapp.booker.specs.BookingSpec.*;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 
@@ -11,7 +10,7 @@ public class ChangeBookingHelper {
 
     public static void changeBookingPut(String token, int id, BookingBodyModel value) {
 
-        given()
+        given(bookingRequestSpec)
                 .contentType(JSON)
                 .header("Cookie", "token=" + token)
                 .body(value)
@@ -27,7 +26,7 @@ public class ChangeBookingHelper {
 
     public static void changeBookingPatch(String token, int id, BookingBodyModel value) {
 
-        given()
+        given(bookingRequestSpec)
                 .contentType(JSON)
                 .header("Cookie", "token=" + token)
                 .when()
@@ -41,7 +40,7 @@ public class ChangeBookingHelper {
 
     public static void deleteBooking(String token, int id) {
 
-        given()
+        given(bookingRequestSpec)
                 .contentType(JSON)
                 .header("Cookie", "token=" + token)
                 .when()

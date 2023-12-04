@@ -2,13 +2,12 @@ package herokuapp.booker.helpers;
 
 import io.restassured.response.ExtractableResponse;
 
-import static herokuapp.booker.specs.BookingSpec.bookingFindRemovedIdSpec;
-import static herokuapp.booker.specs.BookingSpec.bookingResponseSpec;
+import static herokuapp.booker.specs.BookingSpec.*;
 import static io.restassured.RestAssured.given;
 
 public class FindBookingsHelper {
     public static ExtractableResponse getArrayBookings() {
-        ExtractableResponse response = given()
+        ExtractableResponse response = given(bookingRequestSpec)
                 .when()
                 .get("/booking")
                 .then()
@@ -19,7 +18,7 @@ public class FindBookingsHelper {
     }
 
     public static ExtractableResponse findBooking(int id) {
-        ExtractableResponse response = given()
+        ExtractableResponse response = given(bookingRequestSpec)
                 .when()
                 .get("/booking/" + id)
                 .then()
@@ -30,7 +29,7 @@ public class FindBookingsHelper {
     }
 
     public static ExtractableResponse findRemovedBooking(int id) {
-        ExtractableResponse response = given()
+        ExtractableResponse response = given(bookingRequestSpec)
                 .when()
                 .get("/booking/" + id)
                 .then()
