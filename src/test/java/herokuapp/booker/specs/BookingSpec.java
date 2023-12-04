@@ -22,4 +22,16 @@ public class BookingSpec {
             .log(BODY)
             .expectStatusCode(200)
             .build();
+
+    public static ResponseSpecification bookingDeleteResponseSpec = new ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(201)
+            .build();
+
+    public static ResponseSpecification bookingFindRemovedIdSpec = new ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(404)
+            .build();
 }

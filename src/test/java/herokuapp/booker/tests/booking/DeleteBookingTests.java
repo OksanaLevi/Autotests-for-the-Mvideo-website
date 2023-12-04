@@ -1,25 +1,15 @@
 package herokuapp.booker.tests.booking;
 
+import herokuapp.booker.helpers.ChangeBookingHelper;
+import herokuapp.booker.helpers.FindBookingsHelper;
+import herokuapp.booker.tests.TestBase;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
-
-public class DeleteBookingTests {
+public class DeleteBookingTests extends TestBase {
 
     @Test
     void deleteBookingTest() {
-
-        given()
-                .log().uri()
-                .log().method()
-                .contentType(JSON)
-                .header("Cookie", "token=70c7284070f5bf3")
-                .when()
-                .delete("https://restful-booker.herokuapp.com/booking/13")
-                .then()
-                .log().status()
-                .log().body()
-                .statusCode(201);
+        ChangeBookingHelper.deleteBooking(token, bookingId);
+        FindBookingsHelper.findRemovedBooking(bookingId);
     }
 }
