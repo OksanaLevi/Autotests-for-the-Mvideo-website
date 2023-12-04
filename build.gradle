@@ -40,3 +40,63 @@ tasks.withType(Test) {
         }
     }
 }
+
+task get_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("get")
+    }
+}
+
+task post_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("post")
+    }
+}
+
+task put_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("put")
+    }
+}
+
+task patch_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("patch")
+    }
+}
+
+task delete_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("delete")
+    }
+}
+
+task auth_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("auth")
+    }
+}
+
+task create_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("create")
+    }
+}
+
+task update_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("update")
+    }
+}
+
+task negative_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("negative")
+    }
+}
+
+task health_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("health")
+    }
+}
