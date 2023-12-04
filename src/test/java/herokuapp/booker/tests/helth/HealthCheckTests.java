@@ -1,20 +1,32 @@
 package herokuapp.booker.tests.helth;
 
-import org.junit.jupiter.api.Test;
+import herokuapp.booker.helpers.ChangeBookingHelper;
+import io.qameta.allure.*;
+import io.restassured.RestAssured;
+import org.junit.jupiter.api.*;
 
-import static io.restassured.RestAssured.given;
+import static io.qameta.allure.Allure.step;
 
+@Epic("Бронирование номеров")
+@Story("Здоровье сборки")
+@Owner("Левинская Оксана")
 public class HealthCheckTests {
+
     @Test
+    @Tags({
+            @Tag("health"),
+            @Tag("get")
+    })
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("GET. Проверка здоровья сборки")
     void getHealthCheckTest() {
-        given()
-                .log().uri()
-                .log().method()
-                .when()
-                .get("https://restful-booker.herokuapp.com/ping")
-                .then()
-                .log().status()
-                .log().body()
-                .statusCode(201);
+        step("Проверка статус-кода", () -> {
+            ChangeBookingHelper.checkHealth();
+        });
+    }
+
+    @BeforeEach
+    void openUrl() {
+        RestAssured.baseURI = "https://restful-booker.herokuapp.com";
     }
 }

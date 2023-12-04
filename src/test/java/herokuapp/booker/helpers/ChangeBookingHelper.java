@@ -18,7 +18,7 @@ public class ChangeBookingHelper {
                 .when()
                 .put(String.valueOf(id))
                 .then()
-                .spec(bookingDeleteResponseSpec)
+                .spec(bookingDeleteAndHealthResponseSpec)
                 .log().status()
                 .log().body()
                 .extract();
@@ -46,7 +46,18 @@ public class ChangeBookingHelper {
                 .when()
                 .delete(String.valueOf(id))
                 .then()
-                .spec(bookingDeleteResponseSpec)
+                .spec(bookingDeleteAndHealthResponseSpec)
+                .extract();
+    }
+
+    public static void checkHealth() {
+
+        given(bookingRequestSpec)
+                .contentType(JSON)
+                .when()
+                .get("/ping")
+                .then()
+                .spec(bookingDeleteAndHealthResponseSpec)
                 .extract();
     }
 }

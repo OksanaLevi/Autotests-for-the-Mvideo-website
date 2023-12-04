@@ -23,7 +23,7 @@ public class BookingSpec {
             .expectStatusCode(200)
             .build();
 
-    public static ResponseSpecification bookingDeleteResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification bookingDeleteAndHealthResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .expectStatusCode(201)

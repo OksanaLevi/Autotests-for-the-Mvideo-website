@@ -5,33 +5,49 @@ import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.ArrayBookingModel;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
+import io.qameta.allure.*;
 import io.restassured.response.ExtractableResponse;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+@Epic("Бронирование номеров")
+@Story("Создание бронирования")
+@Owner("Левинская Оксана")
 public class CreationBookingTests {
 
     @Test
+    @Tags({
+            @Tag("create"),
+            @Tag("post")
+    })
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("POST. Проверка создания нового бронирования")
     void createBookingTest() {
-        RandomTestData randomTestData = new RandomTestData();
-        BookingDatesModel date = new BookingDatesModel();
-        BookingBodyModel bookingData = new BookingBodyModel();
+        step("Проверка статус-кода и присвоения значения в параметр ID", () -> {
+            RandomTestData randomTestData = new RandomTestData();
+            BookingDatesModel date = new BookingDatesModel();
+            BookingBodyModel bookingData = new BookingBodyModel();
 
-        date.setCheckin(randomTestData.checkinDate);
-        date.setCheckout(randomTestData.checkoutDate);
+            date.setCheckin(randomTestData.checkinDate);
+            date.setCheckout(randomTestData.checkoutDate);
 
-        bookingData.setFirstname(randomTestData.firstname);
-        bookingData.setLastname(randomTestData.lastname);
-        bookingData.setTotalprice(randomTestData.price);
-        bookingData.setDepositpaid(randomTestData.depositPaid);
-        bookingData.setBookingdates(date);
-        bookingData.setAdditionalneeds(randomTestData.additionalNeeds);
+            bookingData.setFirstname(randomTestData.firstname);
+            bookingData.setLastname(randomTestData.lastname);
+            bookingData.setTotalprice(randomTestData.price);
+            bookingData.setDepositpaid(randomTestData.depositPaid);
+            bookingData.setBookingdates(date);
+            bookingData.setAdditionalneeds(randomTestData.additionalNeeds);
 
-        ExtractableResponse response = CreateBookingHelper.addBooking(bookingData);
-        int bookingDetails = response.as(ArrayBookingModel.class).getBookingid();
-        String bookingId = String.valueOf(bookingDetails);
+            ExtractableResponse response = CreateBookingHelper.addBooking(bookingData);
+            int bookingDetails = response.as(ArrayBookingModel.class).getBookingid();
+            String bookingId = String.valueOf(bookingDetails);
 
-        assertFalse(bookingId.isEmpty());
+            assertFalse(bookingId.isEmpty());
+        });
     }
 }
