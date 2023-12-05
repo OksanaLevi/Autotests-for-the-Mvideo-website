@@ -93,25 +93,25 @@ gradle clean test
 <h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
 
 <p>
-<img width="90%" title="Allure_Report" src="">
+<img width="90%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/allure%20reportAPI.svg">
 </p>
 
 <h3><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"><a name='тк-в-allure-test-ops'>Тестовая документация в Allure TestOps</a></h3>
 
 <p>
-<img width="90%" title="Allure_TestOps" src="">
+<img width="90%" title="Allure_TestOps" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/Allure_TestOpsAPI.svg">
 </p>
 
 <h3><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
 В <code>Allure TestOps</code> настроена интеграция с <code>Jira</code>. Благодаря этому можно прикрепить тестовую модель к тикету в <code>Jira</code>, а также перейти по гиперрсылке для ознакомления с результатами запусков.
 
 <p>
-<img width="70%" title="Jira_task_with_test_case" src="">
+<img width="70%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/Jira_task_with_test_caseAPI.svg">
 </p>
 
 <h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 
 <p>
-<img width="50%" title="message_telegram" src="">
+<img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/telegramAPI.svg">
 </p>
