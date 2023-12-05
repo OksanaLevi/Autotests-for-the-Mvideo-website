@@ -105,16 +105,8 @@ gradle clean test
 <h3><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
 В <code>Allure TestOps</code> настроена интеграция с <code>Jira</code>. Благодаря этому можно прикрепить тестовую модель к тикету в <code>Jira</code>, а также перейти по гиперрсылке для ознакомления с результатами запусков.
 
-Так выглядят прикрепленные тест-кейсы к тикету в <code>Jira</code>:
-
 <p>
 <img width="70%" title="Jira_task_with_test_case" src="">
-</p>
-
-Есть возможность по клику на тест ознакомиться с его шагами:
-
-<p>
-<img width="65%" title="Jira_steps_test_case" src="">
 </p>
 
 <h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
