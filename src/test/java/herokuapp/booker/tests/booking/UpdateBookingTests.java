@@ -51,7 +51,7 @@ public class UpdateBookingTests extends TestBase {
             @Tag("patch")
     })
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("PATCH. Проверка обновления всех полей бронирования")
+    @DisplayName("PATCH. Проверка обновления выборочных полей бронирования")
     void partialUpdateBookingTest() {
         step("Проверка статус-кода, значений для измененных полей", () -> {
             BookingBodyModel bookingData = new BookingBodyModel();
