@@ -1,5 +1,6 @@
 package herokuapp.booker.helpers;
 
+import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.BookingBodyModel;
 
 import static herokuapp.booker.specs.BookingSpec.*;
@@ -9,6 +10,7 @@ import static io.restassured.http.ContentType.JSON;
 public class ChangeBookingHelper {
 
     public static void changeBookingPut(String token, int id, BookingBodyModel value) {
+        RandomTestData url = new RandomTestData();
 
         given(bookingRequestSpec)
                 .contentType(JSON)
@@ -16,7 +18,7 @@ public class ChangeBookingHelper {
                 .body(value)
                 .log().body()
                 .when()
-                .put(String.valueOf(id))
+                .put(url.bookingUrl + id)
                 .then()
                 .spec(bookingResponseSpec)
                 .log().status()
@@ -25,12 +27,13 @@ public class ChangeBookingHelper {
     }
 
     public static void changeBookingPatch(String token, int id, BookingBodyModel value) {
+        RandomTestData url = new RandomTestData();
 
         given(bookingRequestSpec)
                 .contentType(JSON)
                 .header("Cookie", "token=" + token)
                 .when()
-                .patch(String.valueOf(id))
+                .patch(url.bookingUrl + id)
                 .then()
                 .spec(bookingResponseSpec)
                 .log().status()
@@ -39,23 +42,25 @@ public class ChangeBookingHelper {
     }
 
     public static void deleteBooking(String token, int id) {
+        RandomTestData url = new RandomTestData();
 
         given(bookingRequestSpec)
                 .contentType(JSON)
                 .header("Cookie", "token=" + token)
                 .when()
-                .delete(String.valueOf(id))
+                .delete(url.bookingUrl + id)
                 .then()
                 .spec(bookingDeleteAndHealthResponseSpec)
                 .extract();
     }
 
     public static void checkHealth() {
+        RandomTestData url = new RandomTestData();
 
         given(bookingRequestSpec)
                 .contentType(JSON)
                 .when()
-                .get("/ping")
+                .get(url.healthUrl)
                 .then()
                 .spec(bookingDeleteAndHealthResponseSpec)
                 .extract();

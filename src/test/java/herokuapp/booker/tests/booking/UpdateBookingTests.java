@@ -1,6 +1,8 @@
 package herokuapp.booker.tests.booking;
 
 import herokuapp.booker.helpers.ChangeBookingHelper;
+import herokuapp.booker.helpers.components.CreateAuthToken;
+import herokuapp.booker.helpers.components.CreateBooking;
 import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
@@ -11,6 +13,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static herokuapp.booker.helpers.components.CreateAuthToken.token;
+import static herokuapp.booker.helpers.components.CreateBooking.bookingId;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,6 +22,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Story("Изменение бронирования")
 @Owner("Левинская Оксана")
 public class UpdateBookingTests extends TestBase {
+    CreateAuthToken auth = new CreateAuthToken();
+    CreateBooking newBooking = new CreateBooking();
 
     @Test
     @Tags({
@@ -26,7 +32,9 @@ public class UpdateBookingTests extends TestBase {
     })
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("PUT. Проверка обновления всех полей бронирования")
-     public void updateBookingTest() {
+    public void updateBookingTest() {
+        auth.createAuthToken();
+        newBooking.createBooking();
         step("Проверка статус-кода", () -> {
             RandomTestData randomTestData = new RandomTestData();
             BookingDatesModel date = new BookingDatesModel();
@@ -53,6 +61,8 @@ public class UpdateBookingTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("PATCH. Проверка обновления выборочных полей бронирования")
     void partialUpdateBookingTest() {
+        auth.createAuthToken();
+        newBooking.createBooking();
         step("Проверка статус-кода, значений для измененных полей", () -> {
             BookingBodyModel bookingData = new BookingBodyModel();
             RandomTestData randomTestData = new RandomTestData();

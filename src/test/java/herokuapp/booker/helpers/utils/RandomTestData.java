@@ -5,10 +5,12 @@ import com.github.javafaker.Faker;
 import java.util.Locale;
 
 public class RandomTestData {
-
     Faker faker = new Faker(new Locale("ru"));
 
     public String
+            bookingUrl = "/booking/",
+            authUrl = "/auth",
+            healthUrl = "/ping",
             checkinDate = "2023-11-29",
             checkoutDate = "2023-11-30",
             firstname = randomFirstName(),

@@ -5,6 +5,7 @@ import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.ArrayBookingModel;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
+import herokuapp.booker.tests.TestBase;
 import io.qameta.allure.*;
 import io.restassured.response.ExtractableResponse;
 import org.junit.jupiter.api.DisplayName;
@@ -18,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 @Epic("Бронирование номеров")
 @Story("Создание бронирования")
 @Owner("Левинская Оксана")
-public class CreationBookingTests {
+public class CreationBookingTests extends TestBase {
 
     @Test
     @Tags({

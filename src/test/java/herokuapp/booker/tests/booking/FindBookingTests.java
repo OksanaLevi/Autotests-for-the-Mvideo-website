@@ -6,10 +6,9 @@ import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.ArrayBookingModel;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
+import herokuapp.booker.tests.TestBase;
 import io.qameta.allure.*;
-import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 @Epic("Бронирование номеров")
 @Story("Поиск бронирований")
 @Owner("Левинская Оксана")
-public class FindBookingTests {
+public class FindBookingTests extends TestBase {
 
     @Test
     @Tag("get")
@@ -66,10 +65,5 @@ public class FindBookingTests {
             assertEquals(randomTestData.firstname, bookingData.getFirstname());
             assertEquals(randomTestData.checkinDate, date.getCheckin());
         });
-    }
-
-    @BeforeEach
-    void openUrl() {
-        RestAssured.baseURI = "https://restful-booker.herokuapp.com";
     }
 }

@@ -4,6 +4,7 @@ import herokuapp.booker.config.AuthConfig;
 import herokuapp.booker.helpers.AuthHelper;
 import herokuapp.booker.models.LoginBodyModel;
 import herokuapp.booker.models.LoginResponseModel;
+import herokuapp.booker.tests.TestBase;
 import io.qameta.allure.*;
 import io.restassured.response.ExtractableResponse;
 import org.aeonbits.owner.ConfigFactory;
@@ -19,7 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 @Epic("Бронирование номеров")
 @Story("Аутентификация")
 @Owner("Левинская Оксана")
-public class AuthTest {
+public class AuthTest extends TestBase {
+
     AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
 
     @Test
