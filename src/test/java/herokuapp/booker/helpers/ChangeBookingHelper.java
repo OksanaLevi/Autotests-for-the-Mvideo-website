@@ -18,7 +18,7 @@ public class ChangeBookingHelper {
                 .when()
                 .put(String.valueOf(id))
                 .then()
-                .spec(bookingDeleteAndHealthResponseSpec)
+                .spec(bookingResponseSpec)
                 .log().status()
                 .log().body()
                 .extract();
