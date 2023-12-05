@@ -1,4 +1,4 @@
-<h2>В проекте реализованы UI тесты для методов с<a href='https://restful-booker.herokuapp.com/apidoc/'>сайта "Restful Booker"</a></h2>
+<h2>В проекте реализованы UI тесты для методов с <a href='https://restful-booker.herokuapp.com/apidoc/'>сайта "Restful Booker"</a></h2>
 
 ## Содержание
 
@@ -15,11 +15,9 @@
 > ➠ [Тестовая документация в Jira](#тк-в-jira)
 > 
 > ➠ [Отправка результатов запуска в Telegram](#уведомления-в-telegram)
-> 
-> ➠ [Видео-пример запуска теста в Selenoid](#пример-запуска-теста-в-selenoid)
 
 
-<h2><a name='стэк-проекта'>:package:Стек проекта:</a></h2>
+<h2><a name='стэк-проекта'>:package:Стек проекта</a></h2>
 <p align="center">
     <a href="https://www.java.com/""><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="https://gradle.org/"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>
@@ -124,12 +122,4 @@ gradle clean test
 С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 
 <p>
 <img width="50%" title="message_telegram" src="">
-</p>
-
-<h3><img width="4%" title="Selenoid_UI" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenoid.svg"><a name='пример-запуска-теста-в-selenoid'>Пример запуска тестов в Selenoid</a></h3>
-К каждому тесту в <code>Allure-отчете</code> прилагается видео.
-Видео запуска UI-теста:
-
-<p>
-<img title="Selenoid_gif" src="">
 </p>
