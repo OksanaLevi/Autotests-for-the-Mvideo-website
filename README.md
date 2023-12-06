@@ -86,7 +86,7 @@ gradle clean test
 ```
 
 
-<h3><img href="https://www.jenkins.io/" width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
+<h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='запуск-тестов-в-Jenkins' href="https://www.jenkins.io/">Запуск тестов в Jenkins</a></h3>
 
 Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_API_autotests_OksanaL/'>параметризированная сборка</a>
 
