@@ -1,4 +1,4 @@
-package herokuapp.booker.helpers.utils;
+package herokuapp.booker.helpers;
 
 import com.github.javafaker.Faker;
 

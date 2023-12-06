@@ -1,7 +1,7 @@
 package herokuapp.booker.api.methods;
 
 import herokuapp.booker.api.requests.CreateBookingHelper;
-import herokuapp.booker.helpers.utils.RandomTestData;
+import herokuapp.booker.helpers.RandomTestData;
 import herokuapp.booker.models.ArrayBookingModel;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;

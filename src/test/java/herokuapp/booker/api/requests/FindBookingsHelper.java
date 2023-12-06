@@ -1,6 +1,6 @@
 package herokuapp.booker.api.requests;
 
-import herokuapp.booker.helpers.utils.RandomTestData;
+import herokuapp.booker.helpers.RandomTestData;
 import io.restassured.response.ExtractableResponse;
 
 import static herokuapp.booker.specs.BookingSpec.*;

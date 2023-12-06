@@ -3,7 +3,7 @@ package herokuapp.booker.tests.booking;
 import herokuapp.booker.api.requests.ChangeBookingHelper;
 import herokuapp.booker.api.methods.CreateAuthToken;
 import herokuapp.booker.api.methods.CreateBooking;
-import herokuapp.booker.helpers.utils.RandomTestData;
+import herokuapp.booker.helpers.RandomTestData;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
 import herokuapp.booker.tests.TestBase;
