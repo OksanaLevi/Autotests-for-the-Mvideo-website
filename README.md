@@ -1,4 +1,4 @@
-<h2>В проекте реализованы UI тесты для методов <a href='https://restful-booker.herokuapp.com/apidoc/'>сайта "Restful Booker"</a></h2>
+<h2>В проекте реализованы API тесты для методов <a href='https://restful-booker.herokuapp.com/apidoc/'>сайта "Restful Booker"</a></h2>
 
 ## Содержание
 
@@ -19,7 +19,7 @@
 
 <h2><a name='стэк-проекта'>:package:Стек проекта</a></h2>
 <p align="center">
-    <a href="https://www.java.com/""><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
+    <a href="https://www.java.com/"><img title="Java" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/java.svg" width="30px href='https://mir-kvestov.ru'"/></a>
     <a href="https://gradle.org/"><img title="Gradle" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Gradle.svg" width="50px"/></a>
     <a href="https://junit.org/junit5/"><img title="JUnit5" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/JUnit5.svg" width="50px"/></a>
     <a href="https://selenide.org/"><img title="Selenide" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Selenide.svg" width="50px"/></a>
@@ -86,32 +86,32 @@ gradle clean test
 ```
 
 
-<h3><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a name='запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
+<h3><a href="https://www.jenkins.io/"><img width="4%" title="Jenkins" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jenkins.svg"><a/><a name='запуск-тестов-в-Jenkins'>Запуск тестов в Jenkins</a></h3>
 
 Для запуска тестов используется <a href='https://jenkins.autotests.cloud/job/building_API_autotests_OksanaL/'>параметризированная сборка</a>
 
-<h3><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"><a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
+<h3><a href="https://github.com/allure-framework"><img width="4%" title="Allure_Report" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Allure_Report.svg"></a>a<a name='allure-отчет'>Отчет о результатах тестирования в Allure Report</a></h3>
 
 <p>
-<img width="90%" title="Allure_Report" src="">
+<img width="90%" title="Allure_Report" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/allure%20reportAPI.svg">
 </p>
 
-<h3><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"><a name='тк-в-allure-test-ops'>Тестовая документация в Allure TestOps</a></h3>
+<h3><a href="https://qameta.io/"><img width="4%" title="Allure_TestOps" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/AllureTestOps.svg"></a><a name='тк-в-allure-test-ops'>Тестовая документация в Allure TestOps</a></h3>
 
 <p>
-<img width="90%" title="Allure_TestOps" src="">
+<img width="90%" title="Allure_TestOps" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/Allure_TestOpsAPI.svg">
 </p>
 
-<h3><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
+<h3> <a href="https://www.atlassian.com/ru/software/jira"><img width="4%" title="Jira" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Jira.svg"></a><a name='тк-в-jira'>Тестовая документация в Jira</a></h3>
 В <code>Allure TestOps</code> настроена интеграция с <code>Jira</code>. Благодаря этому можно прикрепить тестовую модель к тикету в <code>Jira</code>, а также перейти по гиперрсылке для ознакомления с результатами запусков.
 
 <p>
-<img width="70%" title="Jira_task_with_test_case" src="">
+<img width="70%" title="Jira_task_with_test_case" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/Jira_task_with_test_caseAPI.svg">
 </p>
 
-<h3><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
+<h3><a href="https://web.telegram.org/"><img width="4%" title="Telegram" src="https://github.com/OksanaLevi/OksanaLevi/blob/main/logo/Telegram.svg"></a><a name='уведомления-в-telegram'>Отправка результатов запуска в Telegram</a></h3>
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
 С информацией по настройке и использованию бота можно ознакомиться <a href='https://github.com/qa-guru/allure-notifications'>по ссылке</a> 
 <p>
-<img width="50%" title="message_telegram" src="">
+<img width="50%" title="message_telegram" src="https://github.com/OksanaLevi/Autotests-for-the-Restful-Booker-website/blob/main/readme_design/screens/telegramAPI.svg">
 </p>
