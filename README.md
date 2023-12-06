@@ -1,4 +1,4 @@
-<h2>В проекте реализованы UI тесты для методов <a href='https://restful-booker.herokuapp.com/apidoc/'>сайта "Restful Booker"</a></h2>
+<h2>В проекте реализованы API тесты для методов <a href='https://restful-booker.herokuapp.com/apidoc/'>сайта "Restful Booker"</a></h2>
 
 ## Содержание
 
