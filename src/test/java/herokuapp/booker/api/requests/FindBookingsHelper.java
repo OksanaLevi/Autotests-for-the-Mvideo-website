@@ -1,4 +1,4 @@
-package herokuapp.booker.helpers;
+package herokuapp.booker.api.requests;
 
 import herokuapp.booker.helpers.utils.RandomTestData;
 import io.restassured.response.ExtractableResponse;

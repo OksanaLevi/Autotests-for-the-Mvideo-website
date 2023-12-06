@@ -1,7 +1,7 @@
 package herokuapp.booker.tests.auth;
 
 import herokuapp.booker.config.AuthConfig;
-import herokuapp.booker.helpers.AuthHelper;
+import herokuapp.booker.api.requests.AuthHelper;
 import herokuapp.booker.models.LoginBodyModel;
 import herokuapp.booker.models.LoginResponseModel;
 import herokuapp.booker.tests.TestBase;

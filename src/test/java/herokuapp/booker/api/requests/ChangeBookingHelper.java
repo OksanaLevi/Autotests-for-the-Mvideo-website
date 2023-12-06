@@ -1,4 +1,4 @@
-package herokuapp.booker.helpers;
+package herokuapp.booker.api.requests;
 
 import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.BookingBodyModel;
@@ -32,6 +32,7 @@ public class ChangeBookingHelper {
         given(bookingRequestSpec)
                 .contentType(JSON)
                 .header("Cookie", "token=" + token)
+                .body(value)
                 .when()
                 .patch(url.bookingUrl + id)
                 .then()

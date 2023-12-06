@@ -1,7 +1,7 @@
-package herokuapp.booker.helpers.components;
+package herokuapp.booker.api.methods;
 
 import herokuapp.booker.config.AuthConfig;
-import herokuapp.booker.helpers.AuthHelper;
+import herokuapp.booker.api.requests.AuthHelper;
 import herokuapp.booker.models.LoginBodyModel;
 import herokuapp.booker.models.LoginResponseModel;
 import io.restassured.response.ExtractableResponse;

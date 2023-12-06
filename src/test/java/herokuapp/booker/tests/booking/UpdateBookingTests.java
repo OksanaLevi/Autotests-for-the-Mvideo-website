@@ -1,8 +1,8 @@
 package herokuapp.booker.tests.booking;
 
-import herokuapp.booker.helpers.ChangeBookingHelper;
-import herokuapp.booker.helpers.components.CreateAuthToken;
-import herokuapp.booker.helpers.components.CreateBooking;
+import herokuapp.booker.api.requests.ChangeBookingHelper;
+import herokuapp.booker.api.methods.CreateAuthToken;
+import herokuapp.booker.api.methods.CreateBooking;
 import herokuapp.booker.helpers.utils.RandomTestData;
 import herokuapp.booker.models.BookingBodyModel;
 import herokuapp.booker.models.BookingDatesModel;
@@ -13,8 +13,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import static herokuapp.booker.helpers.components.CreateAuthToken.token;
-import static herokuapp.booker.helpers.components.CreateBooking.bookingId;
+import static herokuapp.booker.api.methods.CreateAuthToken.token;
+import static herokuapp.booker.api.methods.CreateBooking.bookingId;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

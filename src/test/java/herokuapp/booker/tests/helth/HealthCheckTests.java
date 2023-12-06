@@ -1,6 +1,6 @@
 package herokuapp.booker.tests.helth;
 
-import herokuapp.booker.helpers.ChangeBookingHelper;
+import herokuapp.booker.api.requests.ChangeBookingHelper;
 import herokuapp.booker.tests.TestBase;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
